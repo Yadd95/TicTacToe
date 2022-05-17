@@ -14,6 +14,11 @@ public class Main {
         int height = Integer.parseInt(properties.getProperty("height"));
         int wincondition = Integer.parseInt(properties.getProperty("wincondition"));
 
+        if(!validateSize(width) || !validateSize(height)){
+            System.out.println("A játéktér paraméterei 5-nél nagyobb vagy egyenlő és 100-nál kisebb szám kell legyenek!");
+            return;
+        }
+
         boolean exit = false;
         Game game = new Game();
         while(!exit){
@@ -26,6 +31,10 @@ public class Main {
             }
         }
 
+    }
+
+    private static boolean validateSize(int param) {
+        return param >= 5 && param < 100;
     }
 
     private static void loadGame(Game game) {
