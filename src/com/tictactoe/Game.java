@@ -14,6 +14,7 @@ public class Game {
 
     public void loadGame(GameData loadedData) {
         gameData = loadedData;
+        drawBoard();
         runGame();
     }
 
